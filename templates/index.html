@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate an Image from Text</h1>
+        <form action="/" method="post">
+            <label for="prompt">Enter a text prompt:</label>
+            <input type="text" id="prompt" name="prompt" placeholder="e.g., A sunset over mountains" required>
+            <input type="submit" value="Generate Image">
+        </form>
+
+        {% if generated_image %}
+            <div class="generated-image">
+                <h2>Generated Image for: "{{ prompt }}"</h2>
+                <img src="{{ generated_image }}" alt="Generated Image">
+                <br>
+                <a class="download-link" href="{{ url_for('download_image', filename=generated_image.split('/')[-1]) }}">
+                    Download Image
+                </a>
+            </div>
+        {% endif %}
+    </div>
+    <footer>
+        Powered by Stable Diffusion
+    </footer>
+</body>
+</html>
