@@ -83,7 +83,7 @@ The project is deployed on **Google Cloud Run** using **Docker Hub** for image s
 
    - A Dockerfile is included in the project. Use it to build the Docker image:
      ```bash
-     docker build -t text-to-image-generator .
+     docker build -t text_to_image_gen-main:tagname .
      ```
 
 2. **Push the Docker Image** to Docker Hub:
