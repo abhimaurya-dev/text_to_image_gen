@@ -89,15 +89,15 @@ The project is deployed on **Google Cloud Run** using **Docker Hub** for image s
 2. **Push the Docker Image** to Docker Hub:
 
    ```bash
-   docker tag text-to-image-generator your-dockerhub-username/text-to-image-generator
-   docker push your-dockerhub-username/text-to-image-generator
+   docker tag text_to_image_gen-main:tagname your-dockerhub-username/text_to_image_gen-main:tagname
+   docker push your-dockerhub-username/text_to_image_gen-main:tagname
    ```
 
 3. **Deploy on Cloud Run**:
 
    - Google Cloud Run pulls the image from Docker Hub and hosts it:
      ```bash
-     gcloud run deploy --image docker.io/your-dockerhub-username/text-to-image-generator --platform managed
+     gcloud run deploy --image docker.io/your-dockerhub-username/text_to_image_gen-main:tagname --platform managed
      ```
 
 4. Your application will now be live on Cloud Run. Access the deployed app using the provided URL.
