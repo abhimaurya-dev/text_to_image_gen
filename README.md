@@ -31,7 +31,8 @@ The Stable Diffusion model was selected for its ability to generate high-quality
 ├── templates
 │   └── index.html
 ├── Dockerfile
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ## Usage
